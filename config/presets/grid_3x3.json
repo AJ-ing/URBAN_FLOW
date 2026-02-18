@@ -1,0 +1,232 @@
+{
+  "name": "3x3 Grid Network",
+  "description": "Medium complexity 3x3 grid with 9 intersections for testing adaptive control at scale",
+  "network": {
+    "intersections": [
+      {
+        "id": "I1",
+        "coordinates": [0, 0],
+        "approaches": {
+          "north": {"lanes": 2},
+          "south": {"lanes": 2},
+          "east": {"lanes": 2},
+          "west": {"lanes": 2}
+        },
+        "conflict_matrix": {
+          "north_south_green": ["east_west_green"],
+          "east_west_green": ["north_south_green"]
+        }
+      },
+      {
+        "id": "I2",
+        "coordinates": [100, 0],
+        "approaches": {
+          "north": {"lanes": 2},
+          "south": {"lanes": 2},
+          "east": {"lanes": 2},
+          "west": {"lanes": 2}
+        },
+        "conflict_matrix": {
+          "north_south_green": ["east_west_green"],
+          "east_west_green": ["north_south_green"]
+        }
+      },
+      {
+        "id": "I3",
+        "coordinates": [200, 0],
+        "approaches": {
+          "north": {"lanes": 2},
+          "south": {"lanes": 2},
+          "east": {"lanes": 2},
+          "west": {"lanes": 2}
+        },
+        "conflict_matrix": {
+          "north_south_green": ["east_west_green"],
+          "east_west_green": ["north_south_green"]
+        }
+      },
+      {
+        "id": "I4",
+        "coordinates": [0, 100],
+        "approaches": {
+          "north": {"lanes": 2},
+          "south": {"lanes": 2},
+          "east": {"lanes": 2},
+          "west": {"lanes": 2}
+        },
+        "conflict_matrix": {
+          "north_south_green": ["east_west_green"],
+          "east_west_green": ["north_south_green"]
+        }
+      },
+      {
+        "id": "I5",
+        "coordinates": [100, 100],
+        "approaches": {
+          "north": {"lanes": 2},
+          "south": {"lanes": 2},
+          "east": {"lanes": 2},
+          "west": {"lanes": 2}
+        },
+        "conflict_matrix": {
+          "north_south_green": ["east_west_green"],
+          "east_west_green": ["north_south_green"]
+        }
+      },
+      {
+        "id": "I6",
+        "coordinates": [200, 100],
+        "approaches": {
+          "north": {"lanes": 2},
+          "south": {"lanes": 2},
+          "east": {"lanes": 2},
+          "west": {"lanes": 2}
+        },
+        "conflict_matrix": {
+          "north_south_green": ["east_west_green"],
+          "east_west_green": ["north_south_green"]
+        }
+      },
+      {
+        "id": "I7",
+        "coordinates": [0, 200],
+        "approaches": {
+          "north": {"lanes": 2},
+          "south": {"lanes": 2},
+          "east": {"lanes": 2},
+          "west": {"lanes": 2}
+        },
+        "conflict_matrix": {
+          "north_south_green": ["east_west_green"],
+          "east_west_green": ["north_south_green"]
+        }
+      },
+      {
+        "id": "I8",
+        "coordinates": [100, 200],
+        "approaches": {
+          "north": {"lanes": 2},
+          "south": {"lanes": 2},
+          "east": {"lanes": 2},
+          "west": {"lanes": 2}
+        },
+        "conflict_matrix": {
+          "north_south_green": ["east_west_green"],
+          "east_west_green": ["north_south_green"]
+        }
+      },
+      {
+        "id": "I9",
+        "coordinates": [200, 200],
+        "approaches": {
+          "north": {"lanes": 2},
+          "south": {"lanes": 2},
+          "east": {"lanes": 2},
+          "west": {"lanes": 2}
+        },
+        "conflict_matrix": {
+          "north_south_green": ["east_west_green"],
+          "east_west_green": ["north_south_green"]
+        }
+      }
+    ],
+    "connections": [
+      {"from": "I1_east", "to": "I2_west"},
+      {"from": "I2_west", "to": "I1_east"},
+      {"from": "I2_east", "to": "I3_west"},
+      {"from": "I3_west", "to": "I2_east"},
+      {"from": "I1_south", "to": "I4_north"},
+      {"from": "I4_north", "to": "I1_south"},
+      {"from": "I2_south", "to": "I5_north"},
+      {"from": "I5_north", "to": "I2_south"},
+      {"from": "I3_south", "to": "I6_north"},
+      {"from": "I6_north", "to": "I3_south"},
+      {"from": "I4_east", "to": "I5_west"},
+      {"from": "I5_west", "to": "I4_east"},
+      {"from": "I5_east", "to": "I6_west"},
+      {"from": "I6_west", "to": "I5_east"},
+      {"from": "I4_south", "to": "I7_north"},
+      {"from": "I7_north", "to": "I4_south"},
+      {"from": "I5_south", "to": "I8_north"},
+      {"from": "I8_north", "to": "I5_south"},
+      {"from": "I6_south", "to": "I9_north"},
+      {"from": "I9_north", "to": "I6_south"},
+      {"from": "I7_east", "to": "I8_west"},
+      {"from": "I8_west", "to": "I7_east"},
+      {"from": "I8_east", "to": "I9_west"},
+      {"from": "I9_west", "to": "I8_east"}
+    ]
+  },
+  "scenario": {
+    "duration_seconds": 2400,
+    "time_step": 0.5,
+    "random_seed": 42,
+    "description": "Medium-sized urban grid for testing adaptive control effectiveness"
+  },
+  "demand": {
+    "distribution": "poisson",
+    "description": "Moderate traffic with peak demand at center intersections",
+    "arrival_rate_per_min": {
+      "I1_north": 8,
+      "I1_south": 0,
+      "I1_east": 0,
+      "I1_west": 6,
+      "I2_north": 10,
+      "I2_south": 0,
+      "I2_east": 0,
+      "I2_west": 0,
+      "I3_north": 8,
+      "I3_south": 0,
+      "I3_east": 6,
+      "I3_west": 0,
+      "I4_north": 0,
+      "I4_south": 0,
+      "I4_east": 0,
+      "I4_west": 7,
+      "I5_north": 0,
+      "I5_south": 0,
+      "I5_east": 0,
+      "I5_west": 0,
+      "I6_north": 0,
+      "I6_south": 0,
+      "I6_east": 7,
+      "I6_west": 0,
+      "I7_north": 0,
+      "I7_south": 6,
+      "I7_east": 0,
+      "I7_west": 8,
+      "I8_north": 0,
+      "I8_south": 10,
+      "I8_east": 0,
+      "I8_west": 0,
+      "I9_north": 0,
+      "I9_south": 8,
+      "I9_east": 6,
+      "I9_west": 0
+    }
+  },
+  "signal_timing": {
+    "fixed_time": {
+      "green_time_ns": 35,
+      "green_time_ew": 35,
+      "yellow_time": 4,
+      "description": "Balanced timing for moderate traffic"
+    },
+    "adaptive": {
+      "min_green": 10,
+      "max_green": 60,
+      "yellow_time": 4,
+      "queue_threshold": 5,
+      "extension_time": 5,
+      "description": "Adaptive parameters tuned for 3x3 grid"
+    }
+  },
+  "metadata": {
+    "created": "2026-01-22",
+    "author": "POD 1 - Simulation Engine Team",
+    "version": "1.0",
+    "use_case": "Testing adaptive control with medium complexity network",
+    "expected_vehicles": "200-300 vehicles over simulation period",
+    "recommended_for": "Demonstrating scalability of adaptive control"
+  }
+}
