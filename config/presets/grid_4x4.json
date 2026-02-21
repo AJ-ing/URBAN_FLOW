@@ -1,0 +1,383 @@
+{
+  "name": "4x4 Grid Network",
+  "description": "Large-scale 4x4 grid with 16 intersections for stress testing and performance evaluation",
+  "network": {
+    "intersections": [
+      {
+        "id": "I1",
+        "coordinates": [0, 0],
+        "approaches": {
+          "north": {"lanes": 2},
+          "south": {"lanes": 2},
+          "east": {"lanes": 2},
+          "west": {"lanes": 2}
+        },
+        "conflict_matrix": {
+          "north_south_green": ["east_west_green"],
+          "east_west_green": ["north_south_green"]
+        }
+      },
+      {
+        "id": "I2",
+        "coordinates": [100, 0],
+        "approaches": {
+          "north": {"lanes": 2},
+          "south": {"lanes": 2},
+          "east": {"lanes": 2},
+          "west": {"lanes": 2}
+        },
+        "conflict_matrix": {
+          "north_south_green": ["east_west_green"],
+          "east_west_green": ["north_south_green"]
+        }
+      },
+      {
+        "id": "I3",
+        "coordinates": [200, 0],
+        "approaches": {
+          "north": {"lanes": 2},
+          "south": {"lanes": 2},
+          "east": {"lanes": 2},
+          "west": {"lanes": 2}
+        },
+        "conflict_matrix": {
+          "north_south_green": ["east_west_green"],
+          "east_west_green": ["north_south_green"]
+        }
+      },
+      {
+        "id": "I4",
+        "coordinates": [300, 0],
+        "approaches": {
+          "north": {"lanes": 2},
+          "south": {"lanes": 2},
+          "east": {"lanes": 2},
+          "west": {"lanes": 2}
+        },
+        "conflict_matrix": {
+          "north_south_green": ["east_west_green"],
+          "east_west_green": ["north_south_green"]
+        }
+      },
+      {
+        "id": "I5",
+        "coordinates": [0, 100],
+        "approaches": {
+          "north": {"lanes": 2},
+          "south": {"lanes": 2},
+          "east": {"lanes": 2},
+          "west": {"lanes": 2}
+        },
+        "conflict_matrix": {
+          "north_south_green": ["east_west_green"],
+          "east_west_green": ["north_south_green"]
+        }
+      },
+      {
+        "id": "I6",
+        "coordinates": [100, 100],
+        "approaches": {
+          "north": {"lanes": 2},
+          "south": {"lanes": 2},
+          "east": {"lanes": 2},
+          "west": {"lanes": 2}
+        },
+        "conflict_matrix": {
+          "north_south_green": ["east_west_green"],
+          "east_west_green": ["north_south_green"]
+        }
+      },
+      {
+        "id": "I7",
+        "coordinates": [200, 100],
+        "approaches": {
+          "north": {"lanes": 2},
+          "south": {"lanes": 2},
+          "east": {"lanes": 2},
+          "west": {"lanes": 2}
+        },
+        "conflict_matrix": {
+          "north_south_green": ["east_west_green"],
+          "east_west_green": ["north_south_green"]
+        }
+      },
+      {
+        "id": "I8",
+        "coordinates": [300, 100],
+        "approaches": {
+          "north": {"lanes": 2},
+          "south": {"lanes": 2},
+          "east": {"lanes": 2},
+          "west": {"lanes": 2}
+        },
+        "conflict_matrix": {
+          "north_south_green": ["east_west_green"],
+          "east_west_green": ["north_south_green"]
+        }
+      },
+      {
+        "id": "I9",
+        "coordinates": [0, 200],
+        "approaches": {
+          "north": {"lanes": 2},
+          "south": {"lanes": 2},
+          "east": {"lanes": 2},
+          "west": {"lanes": 2}
+        },
+        "conflict_matrix": {
+          "north_south_green": ["east_west_green"],
+          "east_west_green": ["north_south_green"]
+        }
+      },
+      {
+        "id": "I10",
+        "coordinates": [100, 200],
+        "approaches": {
+          "north": {"lanes": 2},
+          "south": {"lanes": 2},
+          "east": {"lanes": 2},
+          "west": {"lanes": 2}
+        },
+        "conflict_matrix": {
+          "north_south_green": ["east_west_green"],
+          "east_west_green": ["north_south_green"]
+        }
+      },
+      {
+        "id": "I11",
+        "coordinates": [200, 200],
+        "approaches": {
+          "north": {"lanes": 2},
+          "south": {"lanes": 2},
+          "east": {"lanes": 2},
+          "west": {"lanes": 2}
+        },
+        "conflict_matrix": {
+          "north_south_green": ["east_west_green"],
+          "east_west_green": ["north_south_green"]
+        }
+      },
+      {
+        "id": "I12",
+        "coordinates": [300, 200],
+        "approaches": {
+          "north": {"lanes": 2},
+          "south": {"lanes": 2},
+          "east": {"lanes": 2},
+          "west": {"lanes": 2}
+        },
+        "conflict_matrix": {
+          "north_south_green": ["east_west_green"],
+          "east_west_green": ["north_south_green"]
+        }
+      },
+      {
+        "id": "I13",
+        "coordinates": [0, 300],
+        "approaches": {
+          "north": {"lanes": 2},
+          "south": {"lanes": 2},
+          "east": {"lanes": 2},
+          "west": {"lanes": 2}
+        },
+        "conflict_matrix": {
+          "north_south_green": ["east_west_green"],
+          "east_west_green": ["north_south_green"]
+        }
+      },
+      {
+        "id": "I14",
+        "coordinates": [100, 300],
+        "approaches": {
+          "north": {"lanes": 2},
+          "south": {"lanes": 2},
+          "east": {"lanes": 2},
+          "west": {"lanes": 2}
+        },
+        "conflict_matrix": {
+          "north_south_green": ["east_west_green"],
+          "east_west_green": ["north_south_green"]
+        }
+      },
+      {
+        "id": "I15",
+        "coordinates": [200, 300],
+        "approaches": {
+          "north": {"lanes": 2},
+          "south": {"lanes": 2},
+          "east": {"lanes": 2},
+          "west": {"lanes": 2}
+        },
+        "conflict_matrix": {
+          "north_south_green": ["east_west_green"],
+          "east_west_green": ["north_south_green"]
+        }
+      },
+      {
+        "id": "I16",
+        "coordinates": [300, 300],
+        "approaches": {
+          "north": {"lanes": 2},
+          "south": {"lanes": 2},
+          "east": {"lanes": 2},
+          "west": {"lanes": 2}
+        },
+        "conflict_matrix": {
+          "north_south_green": ["east_west_green"],
+          "east_west_green": ["north_south_green"]
+        }
+      }
+    ],
+    "connections": [
+      {"from": "I1_east", "to": "I2_west"},
+      {"from": "I2_west", "to": "I1_east"},
+      {"from": "I2_east", "to": "I3_west"},
+      {"from": "I3_west", "to": "I2_east"},
+      {"from": "I3_east", "to": "I4_west"},
+      {"from": "I4_west", "to": "I3_east"},
+      {"from": "I1_south", "to": "I5_north"},
+      {"from": "I5_north", "to": "I1_south"},
+      {"from": "I2_south", "to": "I6_north"},
+      {"from": "I6_north", "to": "I2_south"},
+      {"from": "I3_south", "to": "I7_north"},
+      {"from": "I7_north", "to": "I3_south"},
+      {"from": "I4_south", "to": "I8_north"},
+      {"from": "I8_north", "to": "I4_south"},
+      {"from": "I5_east", "to": "I6_west"},
+      {"from": "I6_west", "to": "I5_east"},
+      {"from": "I6_east", "to": "I7_west"},
+      {"from": "I7_west", "to": "I6_east"},
+      {"from": "I7_east", "to": "I8_west"},
+      {"from": "I8_west", "to": "I7_east"},
+      {"from": "I5_south", "to": "I9_north"},
+      {"from": "I9_north", "to": "I5_south"},
+      {"from": "I6_south", "to": "I10_north"},
+      {"from": "I10_north", "to": "I6_south"},
+      {"from": "I7_south", "to": "I11_north"},
+      {"from": "I11_north", "to": "I7_south"},
+      {"from": "I8_south", "to": "I12_north"},
+      {"from": "I12_north", "to": "I8_south"},
+      {"from": "I9_east", "to": "I10_west"},
+      {"from": "I10_west", "to": "I9_east"},
+      {"from": "I10_east", "to": "I11_west"},
+      {"from": "I11_west", "to": "I10_east"},
+      {"from": "I11_east", "to": "I12_west"},
+      {"from": "I12_west", "to": "I11_east"},
+      {"from": "I9_south", "to": "I13_north"},
+      {"from": "I13_north", "to": "I9_south"},
+      {"from": "I10_south", "to": "I14_north"},
+      {"from": "I14_north", "to": "I10_south"},
+      {"from": "I11_south", "to": "I15_north"},
+      {"from": "I15_north", "to": "I11_south"},
+      {"from": "I12_south", "to": "I16_north"},
+      {"from": "I16_north", "to": "I12_south"},
+      {"from": "I13_east", "to": "I14_west"},
+      {"from": "I14_west", "to": "I13_east"},
+      {"from": "I14_east", "to": "I15_west"},
+      {"from": "I15_west", "to": "I14_east"},
+      {"from": "I15_east", "to": "I16_west"},
+      {"from": "I16_west", "to": "I15_east"}
+    ]
+  },
+  "scenario": {
+    "duration_seconds": 3600,
+    "time_step": 0.5,
+    "random_seed": 42,
+    "description": "Large-scale urban grid for performance testing and scalability analysis"
+  },
+  "demand": {
+    "distribution": "poisson",
+    "description": "High traffic load with concentrated demand at edge entry points",
+    "arrival_rate_per_min": {
+      "I1_north": 10,
+      "I1_south": 0,
+      "I1_east": 0,
+      "I1_west": 8,
+      "I2_north": 12,
+      "I2_south": 0,
+      "I2_east": 0,
+      "I2_west": 0,
+      "I3_north": 12,
+      "I3_south": 0,
+      "I3_east": 0,
+      "I3_west": 0,
+      "I4_north": 10,
+      "I4_south": 0,
+      "I4_east": 8,
+      "I4_west": 0,
+      "I5_north": 0,
+      "I5_south": 0,
+      "I5_east": 0,
+      "I5_west": 9,
+      "I6_north": 0,
+      "I6_south": 0,
+      "I6_east": 0,
+      "I6_west": 0,
+      "I7_north": 0,
+      "I7_south": 0,
+      "I7_east": 0,
+      "I7_west": 0,
+      "I8_north": 0,
+      "I8_south": 0,
+      "I8_east": 9,
+      "I8_west": 0,
+      "I9_north": 0,
+      "I9_south": 0,
+      "I9_east": 0,
+      "I9_west": 10,
+      "I10_north": 0,
+      "I10_south": 0,
+      "I10_east": 0,
+      "I10_west": 0,
+      "I11_north": 0,
+      "I11_south": 0,
+      "I11_east": 0,
+      "I11_west": 0,
+      "I12_north": 0,
+      "I12_south": 0,
+      "I12_east": 10,
+      "I12_west": 0,
+      "I13_north": 0,
+      "I13_south": 8,
+      "I13_east": 0,
+      "I13_west": 10,
+      "I14_north": 0,
+      "I14_south": 12,
+      "I14_east": 0,
+      "I14_west": 0,
+      "I15_north": 0,
+      "I15_south": 12,
+      "I15_east": 0,
+      "I15_west": 0,
+      "I16_north": 0,
+      "I16_south": 10,
+      "I16_east": 8,
+      "I16_west": 0
+    }
+  },
+  "signal_timing": {
+    "fixed_time": {
+      "green_time_ns": 40,
+      "green_time_ew": 40,
+      "yellow_time": 4,
+      "description": "Longer cycle for higher traffic volume"
+    },
+    "adaptive": {
+      "min_green": 15,
+      "max_green": 60,
+      "yellow_time": 4,
+      "queue_threshold": 8,
+      "extension_time": 5,
+      "description": "Adaptive parameters tuned for high-traffic 4x4 grid"
+    }
+  },
+  "metadata": {
+    "created": "2026-01-22",
+    "author": "POD 1 - Simulation Engine Team",
+    "version": "1.0",
+    "use_case": "Performance testing and maximum scalability demonstration",
+    "expected_vehicles": "400-500 vehicles over simulation period",
+    "recommended_for": "Stress testing system performance and demonstrating adaptive control at scale",
+    "performance_note": "May require optimization for smooth rendering at 30+ FPS"
+  }
+}

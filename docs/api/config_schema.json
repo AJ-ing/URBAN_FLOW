@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UrbanFlow Network Configuration",
+  "type": "object",
+  "required": ["network", "scenario"],
+  "properties": {
+    "network": {
+      "type": "object",
+      "properties": {
+        "intersections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "coordinates", "approaches"],
+            "properties": {
+              "id": {"type": "string"},
+              "coordinates": {
+                "type": "array",
+                "items": {"type": "number"},
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "approaches": {
+                "type": "object",
+                "properties": {
+                  "north": {"type": "object"},
+                  "south": {"type": "object"},
+                  "east": {"type": "object"},
+                  "west": {"type": "object"}
+                }
+              }
+            }
+          }
+        },
+        "connections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "from": {"type": "string"},
+              "to": {"type": "string"}
+            }
+          }
+        }
+      }
+    },
+    "scenario": {
+      "type": "object",
+      "properties": {
+        "duration_seconds": {"type": "number", "minimum": 0},
+        "time_step": {"type": "number", "minimum": 0.01},
+        "random_seed": {"type": "integer"}
+      }
+    }
+  }
+}
