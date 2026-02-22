@@ -41,8 +41,7 @@ class Dashboard:
         self._demo_tick = 0
 
         self.screen = pygame.display.set_mode(
-            (self.width, self.height),
-            pygame.DOUBLEBUF | pygame.RESIZABLE
+            (self.width, self.height), pygame.DOUBLEBUF | pygame.RESIZABLE
         )
         pygame.display.set_caption("UrbanFlow - Traffic Simulation")
         self.clock = pygame.time.Clock()
@@ -84,8 +83,7 @@ class Dashboard:
             elif event.type == pygame.VIDEORESIZE:
                 self.width, self.height = event.w, event.h
                 self.screen = pygame.display.set_mode(
-                    (self.width, self.height),
-                    pygame.DOUBLEBUF | pygame.RESIZABLE
+                    (self.width, self.height), pygame.DOUBLEBUF | pygame.RESIZABLE
                 )
                 self._setup_panels()
                 self.renderer.rect = self.panels["network"]
@@ -112,15 +110,20 @@ class Dashboard:
     def _advance_demo(self):
         """Generates fake metric data for Phase 1 demo purposes."""
         import random
+
         self._demo_tick += 1
         self.controls.update_tick(self._demo_tick)
 
         # some random fluctuating values to show the charts working
-        self.charts.update({
-            "throughput": 800 + random.uniform(-15, 15) * (self._demo_tick % 50),
-            "avg_wait_time": 20 + random.uniform(-2, 2) * (self._demo_tick % 30) / 10,
-            "avg_queue_length": 5 + random.uniform(-1, 1) * (self._demo_tick % 20) / 10,
-        })
+        self.charts.update(
+            {
+                "throughput": 800 + random.uniform(-15, 15) * (self._demo_tick % 50),
+                "avg_wait_time": 20
+                + random.uniform(-2, 2) * (self._demo_tick % 30) / 10,
+                "avg_queue_length": 5
+                + random.uniform(-1, 1) * (self._demo_tick % 20) / 10,
+            }
+        )
 
     def update(self):
         """Called each frame — advances the simulation if not paused."""
@@ -150,7 +153,9 @@ class Dashboard:
         # show pause message
         if self.paused:
             panel = self.panels["network"]
-            msg = self.font_med.render("PAUSED - Press Space to start", True, ACCENT_COLOR)
+            msg = self.font_med.render(
+                "PAUSED - Press Space to start", True, ACCENT_COLOR
+            )
             msg_rect = msg.get_rect(centerx=panel.centerx, top=panel.top + 12)
             self.screen.blit(msg, msg_rect)
 

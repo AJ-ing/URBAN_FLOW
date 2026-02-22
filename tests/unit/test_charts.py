@@ -23,19 +23,23 @@ def test_init(chart):
     for name in METRICS:
         assert len(chart.data[name]) == 0
 
+
 def test_update_adds_data(chart):
     chart.update({"throughput": 100.0})
     assert len(chart.data["throughput"]) == 1
     assert chart.tick == 1
+
 
 def test_deque_maxlen(chart):
     for i in range(HISTORY_LEN + 50):
         chart.update({"throughput": float(i)})
     assert len(chart.data["throughput"]) == HISTORY_LEN
 
+
 def test_unknown_keys_ok(chart):
     chart.update({"blah": 42.0})
     assert chart.tick == 1
+
 
 def test_reset(chart):
     chart.update({"throughput": 1.0, "avg_wait_time": 2.0})

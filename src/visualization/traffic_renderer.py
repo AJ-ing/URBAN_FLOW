@@ -8,7 +8,7 @@ import pygame
 import math
 
 # Grid and road sizing
-CELL_SIZE = 150       # px between intersections at zoom 1.0
+CELL_SIZE = 150  # px between intersections at zoom 1.0
 ROAD_WIDTH = 40
 DASH_LEN = 15
 DASH_GAP = 10
@@ -40,9 +40,9 @@ VEH_COLORS = {
 }
 
 SIG_COLORS = {
-    "red":    {"on": (220, 50, 50),   "off": (80, 20, 20)},
-    "yellow": {"on": (240, 200, 50),  "off": (80, 65, 20)},
-    "green":  {"on": (50, 200, 80),   "off": (20, 70, 30)},
+    "red": {"on": (220, 50, 50), "off": (80, 20, 20)},
+    "yellow": {"on": (240, 200, 50), "off": (80, 65, 20)},
+    "green": {"on": (50, 200, 80), "off": (20, 70, 30)},
 }
 
 
@@ -129,23 +129,26 @@ class TrafficRenderer:
                 # horizontal road to the right
                 if c < cols - 1:
                     nx, _ = self.grid_to_screen(c + 1, r)
-                    pygame.draw.rect(self.surface, ROAD_COL,
-                                     (sx, sy - half, nx - sx, rw))
+                    pygame.draw.rect(
+                        self.surface, ROAD_COL, (sx, sy - half, nx - sx, rw)
+                    )
                     self._dashed_line((sx, sy), (nx, sy), MARKING_COL)
 
                 # vertical road going down
                 if r < rows - 1:
                     _, ny = self.grid_to_screen(c, r + 1)
-                    pygame.draw.rect(self.surface, ROAD_COL,
-                                     (sx - half, sy, rw, ny - sy))
+                    pygame.draw.rect(
+                        self.surface, ROAD_COL, (sx - half, sy, rw, ny - sy)
+                    )
                     self._dashed_line((sx, sy), (sx, ny), MARKING_COL)
 
         # intersection boxes
         for r in range(rows):
             for c in range(cols):
                 sx, sy = self.grid_to_screen(c, r)
-                pygame.draw.rect(self.surface, INTERSECT_COL,
-                                 (sx - rw // 2, sy - rw // 2, rw, rw))
+                pygame.draw.rect(
+                    self.surface, INTERSECT_COL, (sx - rw // 2, sy - rw // 2, rw, rw)
+                )
 
         # demo signals
         signals = []

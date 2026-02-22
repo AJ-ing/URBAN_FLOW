@@ -56,14 +56,19 @@ class ControlPanel:
         x = self.rect.x + 20
         y = self.rect.y + (self.rect.height - BTN_H) // 2
 
-        for name, tip in [("play_pause", "Play/Pause (Space)"),
-                          ("reset", "Reset (R)"),
-                          ("step", "Step (Right Arrow)")]:
-            self.buttons.append({
-                "name": name, "tip": tip,
-                "rect": pygame.Rect(x, y, BTN_W, BTN_H),
-                "state": "normal",
-            })
+        for name, tip in [
+            ("play_pause", "Play/Pause (Space)"),
+            ("reset", "Reset (R)"),
+            ("step", "Step (Right Arrow)"),
+        ]:
+            self.buttons.append(
+                {
+                    "name": name,
+                    "tip": tip,
+                    "rect": pygame.Rect(x, y, BTN_W, BTN_H),
+                    "state": "normal",
+                }
+            )
             x += BTN_W + BTN_GAP
 
         # speed slider
@@ -95,7 +100,9 @@ class ControlPanel:
                     btn["state"] = "pressed"
                     return self._btn_click(btn["name"])
 
-            if self.slider_rect and self.slider_rect.inflate(20, 20).collidepoint(event.pos):
+            if self.slider_rect and self.slider_rect.inflate(20, 20).collidepoint(
+                event.pos
+            ):
                 self.dragging_slider = True
                 self._slider_from_mouse(event.pos[0])
                 return "speed_change"
@@ -154,8 +161,12 @@ class ControlPanel:
     def render(self, surface):
         """Draws the control bar."""
         pygame.draw.rect(surface, C_BG, self.rect)
-        pygame.draw.line(surface, (50, 50, 80),
-                         (self.rect.x, self.rect.y), (self.rect.right, self.rect.y))
+        pygame.draw.line(
+            surface,
+            (50, 50, 80),
+            (self.rect.x, self.rect.y),
+            (self.rect.right, self.rect.y),
+        )
 
         # buttons
         for btn in self.buttons:
@@ -182,8 +193,9 @@ class ControlPanel:
         if btn["name"] == "play_pause":
             if self.paused:
                 # play triangle
-                pygame.draw.polygon(surface, ic,
-                    [(cx - 6, cy - 8), (cx - 6, cy + 8), (cx + 8, cy)])
+                pygame.draw.polygon(
+                    surface, ic, [(cx - 6, cy - 8), (cx - 6, cy + 8), (cx + 8, cy)]
+                )
             else:
                 # pause bars
                 pygame.draw.rect(surface, ic, (cx - 7, cy - 8, 5, 16))
@@ -191,8 +203,9 @@ class ControlPanel:
         elif btn["name"] == "reset":
             pygame.draw.rect(surface, ic, (cx - 7, cy - 7, 14, 14))
         elif btn["name"] == "step":
-            pygame.draw.polygon(surface, ic,
-                [(cx - 7, cy - 8), (cx - 7, cy + 8), (cx + 4, cy)])
+            pygame.draw.polygon(
+                surface, ic, [(cx - 7, cy - 8), (cx - 7, cy + 8), (cx + 4, cy)]
+            )
             pygame.draw.rect(surface, ic, (cx + 6, cy - 8, 3, 16))
 
     def _draw_slider(self, surface):
@@ -211,8 +224,12 @@ class ControlPanel:
         ky = self.slider_rect.centery
 
         # filled portion
-        filled = pygame.Rect(self.slider_rect.x, self.slider_rect.y,
-                              kx - self.slider_rect.x, self.slider_rect.height)
+        filled = pygame.Rect(
+            self.slider_rect.x,
+            self.slider_rect.y,
+            kx - self.slider_rect.x,
+            self.slider_rect.height,
+        )
         pygame.draw.rect(surface, C_KNOB, filled, border_radius=2)
 
         # knob circle
@@ -246,10 +263,12 @@ class ControlPanel:
 
         txt = self.font_s.render(btn["tip"], True, (224, 224, 224))
         pad = 6
-        tr = pygame.Rect(btn["rect"].x,
-                          btn["rect"].y - txt.get_height() - pad * 2 - 5,
-                          txt.get_width() + pad * 2,
-                          txt.get_height() + pad * 2)
+        tr = pygame.Rect(
+            btn["rect"].x,
+            btn["rect"].y - txt.get_height() - pad * 2 - 5,
+            txt.get_width() + pad * 2,
+            txt.get_height() + pad * 2,
+        )
         pygame.draw.rect(surface, (50, 50, 80), tr, border_radius=4)
         surface.blit(txt, (tr.x + pad, tr.y + pad))
 

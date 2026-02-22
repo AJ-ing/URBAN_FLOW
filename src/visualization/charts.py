@@ -9,19 +9,35 @@ import io
 from collections import deque
 
 import matplotlib
+
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 HISTORY_LEN = 200
-CHART_UPDATE_EVERY = 30   # only re-render chart every N ticks (performance)
+CHART_UPDATE_EVERY = 30  # only re-render chart every N ticks (performance)
 CHART_DPI = 75
 BG_COL = "#1a1a2e"
 
 # what metrics we track and how to display them
 METRICS = {
-    "throughput": {"label": "Throughput (veh/hr)", "color": "#28a745", "unit": "veh/hr", "short": "Throughput"},
-    "avg_wait_time": {"label": "Avg Wait Time (sec)", "color": "#dc3545", "unit": "sec", "short": "Wait Time"},
-    "avg_queue_length": {"label": "Avg Queue Length", "color": "#4a9eff", "unit": "veh", "short": "Queue Len"},
+    "throughput": {
+        "label": "Throughput (veh/hr)",
+        "color": "#28a745",
+        "unit": "veh/hr",
+        "short": "Throughput",
+    },
+    "avg_wait_time": {
+        "label": "Avg Wait Time (sec)",
+        "color": "#dc3545",
+        "unit": "sec",
+        "short": "Wait Time",
+    },
+    "avg_queue_length": {
+        "label": "Avg Queue Length",
+        "color": "#4a9eff",
+        "unit": "veh",
+        "short": "Queue Len",
+    },
 }
 
 
@@ -92,7 +108,9 @@ class MetricsChart:
 
         # save chart to memory buffer and load as pygame surface
         buf = io.BytesIO()
-        fig.savefig(buf, format="png", dpi=CHART_DPI, facecolor=BG_COL, edgecolor="none")
+        fig.savefig(
+            buf, format="png", dpi=CHART_DPI, facecolor=BG_COL, edgecolor="none"
+        )
         plt.close(fig)  # important! otherwise memory leaks
         buf.seek(0)
         self.cached_chart = pygame.image.load(buf, "png").convert()
@@ -117,7 +135,7 @@ class MetricsChart:
             surface.blit(lbl, (self.rect.x + 10, y))
 
             # value in metric color
-            rgb = tuple(int(cfg["color"][i:i+2], 16) for i in (1, 3, 5))
+            rgb = tuple(int(cfg["color"][i : i + 2], 16) for i in (1, 3, 5))
             val_surf = self.font_big.render(f"{cur:.1f} {cfg['unit']}", True, rgb)
             surface.blit(val_surf, (self.rect.x + 10, y + 16))
             y += 42
