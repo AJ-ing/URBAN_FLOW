@@ -33,8 +33,8 @@ After tick 1, `_vehicle_spawn_times` has 2 entries. After tick 2, it has 3 entri
 
 *Leave this section blank until you actually run the test.*
 
-**Status:** [ ] Pass | [ ] Fail | [ ] Blocked  
-**Date Tested:** YYYY-MM-DD  
-**Tested Version/Commit:** [Commit Hash or Version Number]  
+**Status:** [x] Pass | [ ] Fail | [ ] Blocked  
+**Date Tested:** 2026-04-22  
+**Tested Version/Commit:** pod3/metrics-and-export  
 **Actual Result / Notes:**  
-> [Record what actually happened here. If it failed, link to the bug issue.]
+> Test passed. Tracked 2 vehicles after tick 1, 3 vehicles after tick 2. New vehicle correctly registered on first appearance without duplicating existing entries.

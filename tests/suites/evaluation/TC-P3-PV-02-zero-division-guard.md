@@ -34,8 +34,8 @@ Verify that calling `get_snapshot()` on a freshly initialized MetricsCalculator 
 
 *Leave this section blank until you actually run the test.*
 
-**Status:** [ ] Pass | [ ] Fail | [ ] Blocked  
-**Date Tested:** YYYY-MM-DD  
-**Tested Version/Commit:** [Commit Hash or Version Number]  
+**Status:** [x] Pass | [ ] Fail | [ ] Blocked  
+**Date Tested:** 2026-04-22  
+**Tested Version/Commit:** pod3/metrics-and-export  
 **Actual Result / Notes:**  
-> [Record what actually happened here. If it failed, link to the bug issue.]
+> Test passed. All metrics returned 0.0. No ZeroDivisionError raised. Snapshot matched expected: {'throughput': 0.0, 'avg_wait': 0.0, 'avg_travel': 0.0, 'queue_length': 0, 'avg_wait_time': 0.0, 'avg_queue_length': 0.0}.

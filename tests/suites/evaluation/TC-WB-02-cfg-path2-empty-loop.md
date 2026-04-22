@@ -32,8 +32,8 @@ Exercise independent Path 2 (N1 → N3 → N6) of the `_calc_throughput()` CFG. 
 
 *Leave this section blank until you actually run the test.*
 
-**Status:** [ ] Pass | [ ] Fail | [ ] Blocked  
-**Date Tested:** YYYY-MM-DD  
-**Tested Version/Commit:** [Commit Hash or Version Number]  
+**Status:** [x] Pass | [ ] Fail | [ ] Blocked  
+**Date Tested:** 2026-04-22  
+**Tested Version/Commit:** pod3/metrics-and-export  
 **Actual Result / Notes:**  
-> [Record what actually happened here. If it failed, link to the bug issue.]
+> Test passed. Throughput = 180.0 veh/hr, expected 180.0. 5 vehicles inside window correctly counted, 3 outside window correctly excluded.

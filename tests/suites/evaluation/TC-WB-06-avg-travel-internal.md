@@ -31,8 +31,8 @@ Verify that `_calc_avg_travel()` correctly computes the mean travel time across 
 
 *Leave this section blank until you actually run the test.*
 
-**Status:** [ ] Pass | [ ] Fail | [ ] Blocked  
-**Date Tested:** YYYY-MM-DD  
-**Tested Version/Commit:** [Commit Hash or Version Number]  
+**Status:** [x] Pass | [ ] Fail | [ ] Blocked  
+**Date Tested:** 2026-04-22  
+**Tested Version/Commit:** pod3/metrics-and-export  
 **Actual Result / Notes:**  
-> [Record what actually happened here. If it failed, link to the bug issue.]
+> Test passed. avg_travel = 12.00, expected 12.00. Formula (8+12+16)/3 = 12.0 confirmed correct.

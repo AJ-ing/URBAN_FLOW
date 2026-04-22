@@ -31,8 +31,8 @@ Exercise independent Path 1 (N1 → N2) of the `_calc_throughput()` CFG. When `c
 
 *Leave this section blank until you actually run the test.*
 
-**Status:** [ ] Pass | [ ] Fail | [ ] Blocked  
-**Date Tested:** YYYY-MM-DD  
-**Tested Version/Commit:** [Commit Hash or Version Number]  
+**Status:** [x] Pass | [ ] Fail | [ ] Blocked  
+**Date Tested:** 2026-04-22  
+**Tested Version/Commit:** pod3/metrics-and-export  
 **Actual Result / Notes:**  
-> [Record what actually happened here. If it failed, link to the bug issue.]
+> Test passed. All division paths safe — fresh instance, window_s=0, current_time=0 with departed vehicle, and empty get_snapshot() all returned 0.0 with no ZeroDivisionError.

@@ -33,8 +33,8 @@ Exercise independent Path 3 (N1 → N3 → N4 → N5 → N3 → N6) of the `_cal
 
 *Leave this section blank until you actually run the test.*
 
-**Status:** [ ] Pass | [ ] Fail | [ ] Blocked  
-**Date Tested:** YYYY-MM-DD  
-**Tested Version/Commit:** [Commit Hash or Version Number]  
+**Status:** [x] Pass | [ ] Fail | [ ] Blocked  
+**Date Tested:** 2026-04-22  
+**Tested Version/Commit:** pod3/metrics-and-export  
 **Actual Result / Notes:**  
-> [Record what actually happened here. If it failed, link to the bug issue.]
+> Test passed. Accumulated wait time = 5.0s for a vehicle stopped for 5 ticks at dt=1.0. Wait time tracking confirmed accurate.
