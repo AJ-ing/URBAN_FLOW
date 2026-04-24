@@ -1,5 +1,3 @@
-from typing import Dict
-
 class FixedTimeController:
     PLAN_A = (25, 3)
     PLAN_B = (39, 3)
