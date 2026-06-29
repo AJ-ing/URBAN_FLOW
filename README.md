@@ -126,7 +126,7 @@ See [`docs/architecture/component_diagram.md`](docs/architecture/component_diagr
 
 ```bash
 git clone https://github.com/your-org/UrbanFlow_Group2.git
-cd UrbanFlow_Group2/UrbanFlow_Group2
+cd UrbanFlow_Group2
 ```
 
 ### Step 2 — Create a Virtual Environment
@@ -185,7 +185,7 @@ All dependencies OK
 ## Quick Start
 
 ```bash
-# From the project root (UrbanFlow_Group2/UrbanFlow_Group2/)
+# From the project root (UrbanFlow_Group2/)
 python main.py
 ```
 
@@ -563,7 +563,7 @@ On macOS the default display works without configuration. On Windows use the con
 
 ```bash
 git clone https://github.com/your-org/UrbanFlow_Group2.git
-cd UrbanFlow_Group2/UrbanFlow_Group2
+cd UrbanFlow_Group2
 python -m venv venv && source venv/bin/activate
 pip install -r requirements-dev.txt
 ```
