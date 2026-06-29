@@ -48,13 +48,6 @@ A sidebar dashboard displays live KPIs, a scrolling throughput chart, playback c
 
 ## Screenshots
 
-> Place simulation screenshots under `images/` and they will appear here automatically.
-
-```
-images/
-└── intersection.png    ← main window screenshot (1760 × 800 native)
-```
-
 ![Intersection Simulation](images/intersection.png)
 
 ---
