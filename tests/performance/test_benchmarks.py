@@ -207,10 +207,13 @@ class TestControllerPerformance:
 
     def test_rule_engine_evaluation_latency(self):
         """RuleEngine: single evaluate() call in < 1ms."""
-        from src.controllers.controller import (DemandResponsiveSelection,
-                                                EarlyTermination,
-                                                QueueLengthExtension,
-                                                RuleEngine, WaitTimeThreshold)
+        from src.controllers.controller import (
+            DemandResponsiveSelection,
+            EarlyTermination,
+            QueueLengthExtension,
+            RuleEngine,
+            WaitTimeThreshold,
+        )
 
         rules = [
             WaitTimeThreshold({"max_wait_s": 45.0}),
