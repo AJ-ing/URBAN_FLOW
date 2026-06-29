@@ -1,0 +1,82 @@
+name: Package & Release Standalone Executables
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        include:
+          - os: ubuntu-latest
+            asset_name: urbanflow-linux
+          - os: windows-latest
+            asset_name: urbanflow-windows.exe
+          - os: macos-latest
+            asset_name: urbanflow-macos
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install pyinstaller
+
+      - name: Build with PyInstaller
+        run: |
+          pyinstaller urbanflow.spec
+
+      - name: Rename executable
+        shell: bash
+        run: |
+          mkdir -p dist/release
+          if [ "${{ matrix.os }}" = "windows-latest" ]; then
+            mv dist/UrbanFlow.exe dist/release/${{ matrix.asset_name }}
+          elif [ "${{ matrix.os }}" = "macos-latest" ]; then
+            # Zip the App Bundle on macOS
+            cd dist
+            zip -r release/${{ matrix.asset_name }}.zip UrbanFlow.app || mv UrbanFlow release/${{ matrix.asset_name }}
+          else
+            mv dist/UrbanFlow dist/release/${{ matrix.asset_name }}
+          fi
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.asset_name }}
+          path: dist/release/*
+
+  release:
+    name: Create Release
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: release-artifacts
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: release-artifacts/**/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,10 @@
+[run]
+omit =
+    main.py
+    renderer.py
+    setup.py
+    signals.py
+    ui_theme.py
+    simulation.py
+    test_renderer.py
+    tests/*

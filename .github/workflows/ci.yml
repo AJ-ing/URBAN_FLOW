@@ -1,0 +1,52 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13'
+        cache: 'pip'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt -r requirements-dev.txt
+        pip install bandit safety
+
+    - name: Lint with black
+      run: black --check .
+
+    - name: Check imports with isort
+      run: isort --check .
+
+    - name: Lint with flake8
+      run: flake8 .
+
+    - name: Type check with mypy
+      run: mypy .
+
+    - name: Security Scan with Bandit
+      run: bandit -r . --exclude ./venv,./tests,./test_renderer.py -s B101,B110,B311
+
+    - name: Dependency Security Audit with Safety
+      run: safety check -r requirements.txt
+
+    - name: Run Tests with Coverage Enforcement (Fail if < 90%)
+      env:
+        SDL_VIDEODRIVER: dummy
+        SDL_AUDIODRIVER: dummy
+      run: |
+        python -m pytest --cov=. --cov-report=term-missing --cov-fail-under=90
