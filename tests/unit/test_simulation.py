@@ -16,7 +16,7 @@ os.environ.setdefault("SDL_AUDIODRIVER", "dummy")
 
 import pytest
 
-import simulation
+from src.simulation import simulation
 
 # ---------------------------------------------------------------------------
 # Helper: reset global state between tests

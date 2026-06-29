@@ -5,8 +5,8 @@ import math
 from pathlib import Path
 from typing import Dict
 
-import simulation
-from controller import AdaptiveController, FixedTimeController
+from src.controllers.controller import AdaptiveController, FixedTimeController
+from src.simulation import simulation
 
 defaultGreen = {0: 10, 1: 10, 2: 10, 3: 10}
 defaultRed = 150
@@ -39,7 +39,11 @@ signals = [
 
 def _load_adaptive_params() -> Dict:
     """Load and validate adaptive controller parameters from JSON config."""
-    _config_path = Path(__file__).resolve().parent / "configs" / "adaptive_params.json"
+    _config_path = (
+        Path(__file__).resolve().parent.parent.parent
+        / "configs"
+        / "adaptive_params.json"
+    )
 
     if not _config_path.exists():
         print(f"[WARN] Config file not found at {_config_path}, using defaults")

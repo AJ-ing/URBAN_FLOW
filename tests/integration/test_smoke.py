@@ -14,15 +14,15 @@ def test_smoke_imports():
     pygame.init()
     assert pygame.get_init()
 
-    import controller  # noqa: F401
-    import dashboard_state  # noqa: F401
-    import data_logger  # noqa: F401
     import main  # noqa: F401
-    import metrics_calculator  # noqa: F401
-    import renderer  # noqa: F401
-    import signals
-    import simulation
-    import ui_theme  # noqa: F401
+    from src.controllers import controller  # noqa: F401
+    from src.controllers import signals  # noqa: F401
+    from src.evaluation import data_logger  # noqa: F401
+    from src.evaluation import metrics_calculator  # noqa: F401
+    from src.simulation import simulation  # noqa: F401
+    from src.visualization import dashboard_state  # noqa: F401
+    from src.visualization import renderer  # noqa: F401
+    from src.visualization import ui_theme  # noqa: F401
 
     assert simulation.SPAWN_INTERVAL_S > 0
     assert len(signals.signals) == 4
