@@ -1,8 +1,0 @@
-{
-  "queue_extension_threshold": 5,
-  "max_green_time": 60,
-  "min_green_time": 10,
-  "wait_time_threshold": 45,
-  "max_wait_limit": 90,
-  "enable_phase_skipping": true
-}
