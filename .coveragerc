@@ -1,10 +1,16 @@
 [run]
 omit =
     main.py
+    src/main.py
     renderer.py
+    src/visualization/renderer.py
     setup.py
     signals.py
+    src/controllers/signals.py
     ui_theme.py
+    src/visualization/ui_theme.py
     simulation.py
+    src/simulation/simulation.py
     test_renderer.py
     tests/*
+
