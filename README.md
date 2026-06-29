@@ -125,8 +125,8 @@ See [`docs/architecture/component_diagram.md`](docs/architecture/component_diagr
 ### Step 1 — Clone the Repository
 
 ```bash
-git clone https://github.com/your-org/UrbanFlow_Group2.git
-cd UrbanFlow_Group2
+git clone https://github.com/AJ-ing/URBAN_FLOW.git
+cd URBAN_FLOW
 ```
 
 ### Step 2 — Create a Virtual Environment
@@ -185,7 +185,7 @@ All dependencies OK
 ## Quick Start
 
 ```bash
-# From the project root (UrbanFlow_Group2/)
+# From the project root (URBAN_FLOW/)
 python main.py
 ```
 
@@ -562,8 +562,8 @@ On macOS the default display works without configuration. On Windows use the con
 ### Development Setup
 
 ```bash
-git clone https://github.com/your-org/UrbanFlow_Group2.git
-cd UrbanFlow_Group2
+git clone https://github.com/AJ-ing/URBAN_FLOW.git
+cd URBAN_FLOW
 python -m venv venv && source venv/bin/activate
 pip install -r requirements-dev.txt
 ```
@@ -615,7 +615,7 @@ black . && isort . && flake8 . && mypy .
 ## Project Structure
 
 ```
-UrbanFlow_Group2/
+URBAN_FLOW/
 ├── main.py                      ← Entry point and Pygame event loop
 ├── simulation.py                ← Vehicle physics and global simulation state
 ├── controller.py                ← FixedTimeController, AdaptiveController, RuleEngine
