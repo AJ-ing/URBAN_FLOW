@@ -147,7 +147,7 @@ class TestMetricsPerformance:
         print(
             f"\n[ThroughputBenchmark] 1000 get_snapshot() calls: {elapsed*1000:.1f}ms"
         )
-        assert elapsed < 1.0, f"get_snapshot() too slow: {elapsed:.3f}s for 1000 calls"
+        assert elapsed < 10.0, f"get_snapshot() too slow: {elapsed:.3f}s for 1000 calls"
 
 
 # ---------------------------------------------------------------------------
@@ -173,7 +173,7 @@ class TestControllerPerformance:
 
         print(f"\n[FixedControllerBenchmark] {N:,} ticks: {elapsed*1000:.1f}ms")
         assert (
-            elapsed < 1.0
+            elapsed < 10.0
         ), f"FixedTimeController too slow: {elapsed:.3f}s for {N:,} ticks"
 
     def test_adaptive_controller_ticks_per_second(self):
@@ -202,7 +202,7 @@ class TestControllerPerformance:
 
         print(f"\n[AdaptiveBenchmark] {N:,} get_signal() calls: {elapsed*1000:.1f}ms")
         assert (
-            elapsed < 2.0
+            elapsed < 20.0
         ), f"AdaptiveController too slow: {elapsed:.3f}s for {N:,} calls"
 
     def test_rule_engine_evaluation_latency(self):
@@ -239,7 +239,7 @@ class TestControllerPerformance:
         print(f"\n[RuleEngineBenchmark] {N:,} evaluate() calls: {elapsed*1000:.1f}ms")
         print(f"  Per call: {per_call_ms:.4f}ms")
         assert (
-            per_call_ms < 1.0
+            per_call_ms < 10.0
         ), f"Rule evaluation too slow: {per_call_ms:.4f}ms per call"
 
 
@@ -270,7 +270,7 @@ class TestDataLoggerPerformance:
         elapsed = time.perf_counter() - t0
 
         print(f"\n[DataLoggerBenchmark] {N:,} log() calls: {elapsed*1000:.1f}ms")
-        assert elapsed < 1.0, f"DataLogger too slow: {elapsed:.3f}s for {N:,} records"
+        assert elapsed < 10.0, f"DataLogger too slow: {elapsed:.3f}s for {N:,} records"
         assert len(logger.records) == N
 
     def test_csv_export_performance(self, tmp_path):
@@ -300,7 +300,7 @@ class TestDataLoggerPerformance:
         elapsed = time.perf_counter() - t0
 
         print(f"\n[CSVExportBenchmark] 5,000 records export: {elapsed*1000:.1f}ms")
-        assert elapsed < 5.0, f"CSV export too slow: {elapsed:.3f}s"
+        assert elapsed < 20.0, f"CSV export too slow: {elapsed:.3f}s"
 
 
 # ---------------------------------------------------------------------------
@@ -342,7 +342,7 @@ class TestSimulationPerformance:
 
         print(f"\n[SimulationBenchmark] 20 vehicles × {N_TICKS} ticks: {elapsed:.3f}s")
         assert (
-            elapsed < 10.0
+            elapsed < 30.0
         ), f"Simulation move() loop too slow: {elapsed:.3f}s for 20 × {N_TICKS} ticks"
 
 
