@@ -12,7 +12,7 @@ can run on any CI machine.
 Run with:
     pytest test_renderer.py -v
 
-Author: Rushil Shandil (POD 4 — Visualization)
+Author: Group 2 (POD 4 — Visualization)
 """
 
 from __future__ import annotations

@@ -15,8 +15,8 @@ Follow this guide to set up the UrbanFlow simulator environment on your local ma
 
 1. **Clone the Repository**:
    ```bash
-   git clone <repository_url>
-   cd UrbanFlow_POD4_Rushil
+   git clone https://github.com/your-org/UrbanFlow_Group2.git
+   cd UrbanFlow_Group2
    ```
 
 2. **Create a Virtual Environment**:
