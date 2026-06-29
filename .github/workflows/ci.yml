@@ -2,9 +2,9 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main, master, develop, feature/pod4-deploy ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ main, master, develop, feature/pod4-deploy ]
 
 jobs:
   build-and-test:
