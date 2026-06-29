@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import pytest
 
-from metrics_calculator import MetricsCalculator
+from src.evaluation.metrics_calculator import MetricsCalculator
 
 
 class TestMetricsCalculatorInitialization:

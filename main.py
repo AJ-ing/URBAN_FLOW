@@ -9,17 +9,18 @@ from datetime import datetime
 
 import pygame
 
-import signals as signals_module
-import simulation
-import ui_theme as T
-from dashboard_state import MODE_ADAPTIVE, MODE_FIXED, DashboardState
-from renderer import Renderer
+from src.controllers import signals as signals_module
+from src.simulation import simulation
+from src.visualization import ui_theme as T
+from src.visualization.dashboard_state import (MODE_ADAPTIVE, MODE_FIXED,
+                                               DashboardState)
+from src.visualization.renderer import Renderer
 
 # try to import pod 3's stuff. if it's missing for some reason we fall back
 # to fake data so the dashboard still works for demos
 try:
-    from data_logger import CSVExporter, DataLogger
-    from metrics_calculator import MetricsCalculator
+    from src.evaluation.data_logger import CSVExporter, DataLogger
+    from src.evaluation.metrics_calculator import MetricsCalculator
 
     POD3_AVAILABLE = True
 except ImportError:

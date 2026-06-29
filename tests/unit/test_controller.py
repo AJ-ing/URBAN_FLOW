@@ -13,10 +13,12 @@ from typing import Dict
 
 import pytest
 
-from controller import (AdaptiveController, BalancedServiceGuarantee,
-                        DemandResponsiveSelection, EarlyTermination,
-                        FixedTimeController, QueueLengthExtension, RuleEngine,
-                        WaitTimeThreshold)
+from src.controllers.controller import (AdaptiveController,
+                                        BalancedServiceGuarantee,
+                                        DemandResponsiveSelection,
+                                        EarlyTermination, FixedTimeController,
+                                        QueueLengthExtension, RuleEngine,
+                                        WaitTimeThreshold)
 
 # ---------------------------------------------------------------------------
 # TestFixedTimeController

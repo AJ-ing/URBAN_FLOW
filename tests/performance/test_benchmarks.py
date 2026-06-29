@@ -60,7 +60,7 @@ class TestMetricsPerformance:
         Target: complete in < 5 minutes wall time.
         Actual target is easily < 5 seconds for pure Python.
         """
-        from metrics_calculator import MetricsCalculator
+        from src.evaluation.metrics_calculator import MetricsCalculator
 
         calc = MetricsCalculator(window_s=300)
         vehicles = _make_vehicles(500, crossed_fraction=0.0)
@@ -106,7 +106,7 @@ class TestMetricsPerformance:
 
     def test_metrics_deque_memory_bounded(self):
         """Verify departed_vehicles deque is bounded (does not grow without limit)."""
-        from metrics_calculator import MetricsCalculator
+        from src.evaluation.metrics_calculator import MetricsCalculator
 
         calc = MetricsCalculator(window_s=60)  # 1-minute window
 
@@ -129,7 +129,7 @@ class TestMetricsPerformance:
 
     def test_metrics_throughput_consistent_under_load(self):
         """Throughput calculation stays consistent with 1000+ departures."""
-        from metrics_calculator import MetricsCalculator
+        from src.evaluation.metrics_calculator import MetricsCalculator
 
         calc = MetricsCalculator(window_s=300)
 
@@ -160,7 +160,7 @@ class TestControllerPerformance:
 
     def test_fixed_controller_ticks_per_second(self):
         """FixedTimeController: 100,000 tick() calls in < 1 second."""
-        from controller import FixedTimeController
+        from src.controllers.controller import FixedTimeController
 
         controller = FixedTimeController(green_s=10, yellow_s=3)
         controller.reset()
@@ -178,7 +178,7 @@ class TestControllerPerformance:
 
     def test_adaptive_controller_ticks_per_second(self):
         """AdaptiveController: 10,000 get_signal() calls in < 1 second."""
-        from controller import AdaptiveController
+        from src.controllers.controller import AdaptiveController
 
         controller = AdaptiveController(
             {
@@ -207,9 +207,10 @@ class TestControllerPerformance:
 
     def test_rule_engine_evaluation_latency(self):
         """RuleEngine: single evaluate() call in < 1ms."""
-        from controller import (DemandResponsiveSelection, EarlyTermination,
-                                QueueLengthExtension, RuleEngine,
-                                WaitTimeThreshold)
+        from src.controllers.controller import (DemandResponsiveSelection,
+                                                EarlyTermination,
+                                                QueueLengthExtension,
+                                                RuleEngine, WaitTimeThreshold)
 
         rules = [
             WaitTimeThreshold({"max_wait_s": 45.0}),
@@ -249,7 +250,7 @@ class TestDataLoggerPerformance:
 
     def test_data_logger_10000_records(self):
         """DataLogger: log 10,000 records in < 1 second."""
-        from data_logger import DataLogger
+        from src.evaluation.data_logger import DataLogger
 
         logger = DataLogger()
         snapshot = {
@@ -271,7 +272,7 @@ class TestDataLoggerPerformance:
 
     def test_csv_export_performance(self, tmp_path):
         """CSVExporter: export 5,000 records in < 2 seconds."""
-        from data_logger import CSVExporter, DataLogger
+        from src.evaluation.data_logger import CSVExporter, DataLogger
 
         logger = DataLogger()
         snapshot = {
@@ -317,7 +318,7 @@ class TestSimulationPerformance:
         os.environ.setdefault("SDL_VIDEODRIVER", "dummy")
         os.environ.setdefault("SDL_AUDIODRIVER", "dummy")
 
-        import simulation
+        from src.simulation import simulation
 
         # Reset global state
         simulation.reset_vehicles()

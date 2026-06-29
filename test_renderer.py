@@ -24,8 +24,10 @@ os.environ.setdefault("SDL_VIDEODRIVER", "dummy")
 
 import pytest
 
-from dashboard_state import (CHART_HISTORY_SECONDS, MODE_ADAPTIVE, MODE_FIXED,
-                             VALID_GRIDS, ChartSample, DashboardState)
+from src.visualization.dashboard_state import (CHART_HISTORY_SECONDS,
+                                               MODE_ADAPTIVE, MODE_FIXED,
+                                               VALID_GRIDS, ChartSample,
+                                               DashboardState)
 
 # ===========================================================================
 # Fixtures
