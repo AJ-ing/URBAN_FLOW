@@ -184,8 +184,8 @@ All dependencies OK
 
 ## Quick Start
 
-```bash
-# From the project root (URBAN_FLOW/)
+```bash # From the project root (URBAN_FLOW/)
+
 python main.py
 ```
 
