@@ -48,7 +48,7 @@ A sidebar dashboard displays live KPIs, a scrolling throughput chart, playback c
 
 ## Screenshots
 
-![Intersection Simulation](images/intersection.png)
+![Intersection Simulation](images/screenshot_running.png)
 
 ---
 
