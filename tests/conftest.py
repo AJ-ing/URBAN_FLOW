@@ -1,4 +1,5 @@
 import os
+
 import pygame
 
 # Force headless dummy drivers for all pytest runs (CI and local headless runs)
