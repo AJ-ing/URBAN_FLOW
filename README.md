@@ -55,7 +55,7 @@ images/
 └── intersection.png    ← main window screenshot (1760 × 800 native)
 ```
 
-*Screenshot placeholder — run `python main.py` to see the live simulation.*
+![Intersection Simulation](images/intersection.png)
 
 ---
 
@@ -132,8 +132,8 @@ See [`docs/architecture/component_diagram.md`](docs/architecture/component_diagr
 ### Step 1 — Clone the Repository
 
 ```bash
-git clone https://github.com/your-org/UrbanFlow_POD4_Rushil.git
-cd UrbanFlow_POD4_Rushil/UrbanFlow_POD4_Rushil
+git clone https://github.com/your-org/UrbanFlow_Group2.git
+cd UrbanFlow_Group2/UrbanFlow_Group2
 ```
 
 ### Step 2 — Create a Virtual Environment
@@ -192,7 +192,7 @@ All dependencies OK
 ## Quick Start
 
 ```bash
-# From the project root (UrbanFlow_POD4_Rushil/UrbanFlow_POD4_Rushil/)
+# From the project root (UrbanFlow_Group2/UrbanFlow_Group2/)
 python main.py
 ```
 
@@ -569,8 +569,8 @@ On macOS the default display works without configuration. On Windows use the con
 ### Development Setup
 
 ```bash
-git clone https://github.com/your-org/UrbanFlow_POD4_Rushil.git
-cd UrbanFlow_POD4_Rushil/UrbanFlow_POD4_Rushil
+git clone https://github.com/your-org/UrbanFlow_Group2.git
+cd UrbanFlow_Group2/UrbanFlow_Group2
 python -m venv venv && source venv/bin/activate
 pip install -r requirements-dev.txt
 ```
@@ -622,7 +622,7 @@ black . && isort . && flake8 . && mypy .
 ## Project Structure
 
 ```
-UrbanFlow_POD4_Rushil/
+UrbanFlow_Group2/
 ├── main.py                      ← Entry point and Pygame event loop
 ├── simulation.py                ← Vehicle physics and global simulation state
 ├── controller.py                ← FixedTimeController, AdaptiveController, RuleEngine
@@ -672,7 +672,7 @@ This project is licensed under the **MIT License**.
 ```
 MIT License
 
-Copyright (c) 2026 Rushil Shandil
+Copyright (c) 2026 Group 2
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -695,4 +695,4 @@ SOFTWARE.
 
 ---
 
-*Built by Rushil Shandil — UrbanFlow POD 4*
+*Built by Group 2 — UrbanFlow POD 4*
