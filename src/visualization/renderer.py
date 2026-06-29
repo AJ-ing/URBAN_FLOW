@@ -9,8 +9,7 @@ from typing import Dict, List, Optional, Tuple
 import pygame
 
 from src.visualization import ui_theme as T
-from src.visualization.dashboard_state import (MODE_ADAPTIVE, MODE_FIXED,
-                                               DashboardState)
+from src.visualization.dashboard_state import MODE_ADAPTIVE, MODE_FIXED, DashboardState
 
 Rect = pygame.Rect
 

@@ -12,8 +12,7 @@ import pygame
 from src.controllers import signals as signals_module
 from src.simulation import simulation
 from src.visualization import ui_theme as T
-from src.visualization.dashboard_state import (MODE_ADAPTIVE, MODE_FIXED,
-                                               DashboardState)
+from src.visualization.dashboard_state import MODE_ADAPTIVE, MODE_FIXED, DashboardState
 from src.visualization.renderer import Renderer
 
 # try to import pod 3's stuff. if it's missing for some reason we fall back

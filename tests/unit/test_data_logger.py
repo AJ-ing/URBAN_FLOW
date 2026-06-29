@@ -17,8 +17,12 @@ from pathlib import Path
 
 import pytest
 
-from src.evaluation.data_logger import (ComparisonAnalyzer, CSVExporter,
-                                        DataLogger, JSONExporter)
+from src.evaluation.data_logger import (
+    ComparisonAnalyzer,
+    CSVExporter,
+    DataLogger,
+    JSONExporter,
+)
 
 # ---------------------------------------------------------------------------
 # Helpers
