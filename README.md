@@ -665,7 +665,7 @@ This project is licensed under the **MIT License**.
 ```
 MIT License
 
-Copyright (c) 2026 Group 2
+Copyright (c) 2026 UrbanFLow
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -688,4 +688,4 @@ SOFTWARE.
 
 ---
 
-*Built by Group 2 — UrbanFlow POD 4*
+*Built by Group 2 — UrbanFlow*
